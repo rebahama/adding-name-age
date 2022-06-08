@@ -10,13 +10,19 @@ from sqlalchemy.orm import sessionmaker
 db = create_engine("postgresql:///nameage")
 base = declarative_base()
 
+def __repr__(self):
+        # __repr__ to represent itself in the form of a string
+        return self.category_name
 # create a class-based model for the "Artist" table
 class Person(base):
     __tablename__ = "Person"
     PersonId = Column(Integer, primary_key=True)
-    name = Column(String)
+    name = Column(String(25))
     age = Column(Integer)
 
+
+def __repr__(self):
+    return f"{self.PersonId} Name: {self.name} Age:{self.age}"
 
 Session = sessionmaker(db)
 session = Session()
