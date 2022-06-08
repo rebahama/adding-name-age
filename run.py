@@ -12,6 +12,11 @@ def addperson():
     return render_template("addperson.html")
 
 
+@app.route("/personadding")
+def personadding():
+    return render_template("personadding.html")
+
+
 if __name__ == "__main__":
     app.run(
         debug=True
