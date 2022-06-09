@@ -4,7 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql:///agename'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql:///nameage'
 
 db = SQLAlchemy(app)
 
@@ -17,7 +17,6 @@ class Person(db.Model):
     def __repr__(self):
             # __repr__ to represent itself in the form of a string
             return self.name
-
 
 
 
