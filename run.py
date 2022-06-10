@@ -48,6 +48,20 @@ def deleteperson(PersonId):
     db.session.commit()
     return redirect(url_for("addperson"))
 
+@app.route("/editperson/<int:PersonId>", methods=["GET", "POST"])
+def editperson(PersonId):
+    person=Person.query.get_or_404(PersonId)
+    if request.method=="POST":
+         person = Person(name=request.form.get("name"),
+         age = request.form.get("age")                
+        )
+        
+         db.session.commit(person)
+         return redirect(url_for("addperson"))
+    
+    return render_template("edit.html", person=person)
+
+
 if __name__ == "__main__":
     app.run(
         debug=True
