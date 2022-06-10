@@ -41,6 +41,12 @@ def personadding():
         return redirect("addperson")
     return render_template("personadding.html")
 
+@app.route("/deleteperson/<int:PersonId>")
+def deleteperson(PersonId):
+    person=Person.query.get_or_404(PersonId)
+    db.session.delete(person)
+    db.session.commit()
+    return redirect(url_for("addperson"))
 
 if __name__ == "__main__":
     app.run(

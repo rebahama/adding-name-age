@@ -14,7 +14,7 @@
                 <h5 class="card-title">{{persons.name}}</h5>
                 <h5 class="card-title">{{persons.age}}</h5>
                     <a href="#" class="btn btn-success">Edit</a>
-                    <a href="#" class="btn btn-danger">Delete</a>
+                    <a href="{{url_for('deleteperson', PersonId=persons.PersonId )}}" class="btn btn-danger">Delete</a>
             </div>
         </div>
     </div>
