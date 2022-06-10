@@ -26,7 +26,8 @@ def index():
 
 @app.route("/addperson")
 def addperson():
-    return render_template("addperson.html")
+    person=list(Person.query.order_by(Person.name).all())
+    return render_template("addperson.html", person=person)
 
 
 @app.route("/personadding", methods=["GET", "POST"])
