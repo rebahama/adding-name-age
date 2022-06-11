@@ -4,7 +4,7 @@
 <div class="position-absolute top-50 start-50 translate-middle">
     <h2>Edit</h2>
 <div class="row g-0">
-<form method="POST" action="{{url_for('editperson', PersonId=person.PersonId )}}">
+<form method="POST" action="{{url_for('editperson', PersonId=person.PersonId) }}">
     <div class="mb-3">
       <label for="name" class="form-label">Name</label>
       <input type="text" class="form-control" id="name" value="{{person.name}}" name="name">

@@ -52,10 +52,8 @@ def deleteperson(PersonId):
 def editperson(PersonId):
     person=Person.query.get_or_404(PersonId)
     if request.method=="POST":
-         person = Person(name=request.form.get("name"),
-         age = request.form.get("age")       
-        )
-         db.session.add(person)
+         person.name=request.form.get("name")
+         person.age=request.form.get("age")
          db.session.commit()
          return redirect(url_for("addperson"))
     
